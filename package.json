@@ -1,0 +1,14 @@
+{
+  "name": "zenva_mmorpg",
+  "version": "0.1.0",
+  "description": "Zenva Course MMORPG ",
+  "main": "main.js",
+  "author": "Nathan Kondra",
+  "license": "MIT",
+  "dependencies": {
+    "http-server": "^0.12.3"
+  },
+  "scripts": {
+    "serve": "yarn run http-server"
+  }
+}
