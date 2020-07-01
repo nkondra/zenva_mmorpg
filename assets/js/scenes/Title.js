@@ -3,8 +3,6 @@ class TitleScene extends Phaser.Scene {
     super("Title");
   }
 
-  preload() {}
-
   create() {
     this.titleText = this.add.text(
       this.scale.width / 2,
@@ -20,14 +18,20 @@ class TitleScene extends Phaser.Scene {
       "button1"
     );
     this.button.setInteractive();
+
+    this.buttonText = this.add.text(0, 0, "Start", {
+      fontSize: "26px",
+      fill: "#ffffff",
+    });
+    Phaser.Display.Align.In.Center(this.buttonText, this.button);
     this.button.on("pointerdown", () => {
-      console.log("down");
+      this.scene.start("Game");
     });
     this.button.on("pointerover", () => {
-      console.log("over");
+      this.button.setTexture("button2");
     });
     this.button.on("pointerout", () => {
-      console.log("out");
+      this.button.setTexture("button1");
     });
   }
 }
